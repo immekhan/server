@@ -12,7 +12,7 @@ import java.util.Objects;
  * A role.
  */
 @Entity
-@Table(name = "SESSION_POLICIES")
+@Table(name = "ITOB_SESSION_POLICIES")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class SessionPolicy extends AbsAbstractAuditingEntity implements Serializable {
 

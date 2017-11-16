@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="ROLE_PRIVILEGES")
+@Table(name="ITOB_ROLE_PRIVILEGES")
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class RolePrivilege
     extends AbsAbstractAuditingEntity

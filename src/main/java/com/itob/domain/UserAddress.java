@@ -11,7 +11,7 @@ import java.util.Objects;
  * A user addresses mapping
  */
 @Entity
-@Table(name = "USER_ADDRESSES")
+@Table(name = "ITOB_USER_ADDRESSES")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class UserAddress extends AbsAbstractAuditingEntity implements Serializable {
 

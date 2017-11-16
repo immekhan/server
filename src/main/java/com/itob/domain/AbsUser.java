@@ -11,7 +11,7 @@ import java.util.Objects;
  * A user mapping
  */
 @Entity
-@Table(name = "ABS_USERS")
+@Table(name = "ITOB_ABS_USERS")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class AbsUser extends AbsAbstractAuditingEntity implements Serializable {
 

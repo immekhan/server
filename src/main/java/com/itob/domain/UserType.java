@@ -11,7 +11,7 @@ import java.util.Objects;
  * ABS_USER_TYPE mapping
  */
 @Entity
-@Table(name = "USER_TYPE")
+@Table(name = "ITOB_USER_TYPE")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class UserType extends AbsAbstractAuditingEntity implements Serializable {
 

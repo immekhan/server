@@ -15,7 +15,7 @@ import java.util.Objects;
  * A privilege.
  */
 @Entity
-@Table(name = "PRIVILEGES")
+@Table(name = "ITOB_PRIVILEGES")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Privileges extends AbsAbstractAuditingEntity implements Serializable {
 

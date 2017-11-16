@@ -13,7 +13,7 @@ import java.util.Objects;
  * A Company.
  */
 @Entity
-@Table(name = "COMP_DEV_TYP_CRED")
+@Table(name = "ITOB_COMP_DEV_TYP_CRED")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class CompanyDeviceTypeCredential extends AbsAbstractAuditingEntity implements Serializable {
 

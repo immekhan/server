@@ -106,7 +106,7 @@ public class BatchConfiguration {
     public JdbcBatchItemWriter<DummyForm> dummyFormItemWriter() {
         JdbcBatchItemWriter<DummyForm> writer = new JdbcBatchItemWriter<DummyForm>();
         writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<DummyForm>());
-        writer.setSql("INSERT INTO DUMMY_FORM (id_entity, first_name, last_name,email,image_file,IMAGE_FILE_CONTENT_TYPE,BINARY_FILE,BINARY_FILE_CONTENT_TYPE,CLOB_TEXT_FIELD) VALUES (HIBERNATE_SEQUENCE.nextval, :firstName, :lastName, :email, :imageFile, :imageFileContentType , :binaryFile, :binaryFileContentType, :clobTextField)");
+        writer.setSql("INSERT INTO ITOB_DUMMY_FORM (id_entity, first_name, last_name,email,image_file,IMAGE_FILE_CONTENT_TYPE,BINARY_FILE,BINARY_FILE_CONTENT_TYPE,CLOB_TEXT_FIELD) VALUES (HIBERNATE_SEQUENCE.nextval, :firstName, :lastName, :email, :imageFile, :imageFileContentType , :binaryFile, :binaryFileContentType, :clobTextField)");
         writer.setDataSource(dataSource);
         return writer;
     }

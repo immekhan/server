@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Credential Type.
  */
 @Entity
-@Table(name = "CREDENTIAL_TYPES")
+@Table(name = "ITOB_CREDENTIAL_TYPES")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class CredentialType extends AbsAbstractAuditingEntity implements Serializable {
 

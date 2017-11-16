@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Credential Policy.
  */
 @Entity
-@Table(name = "CREDENTIAL_POLICIES")
+@Table(name = "ITOB_CREDENTIAL_POLICIES")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class CredentialPolicy extends AbsAbstractAuditingEntity implements Serializable {
 

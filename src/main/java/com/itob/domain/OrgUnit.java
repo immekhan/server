@@ -15,7 +15,7 @@ import java.util.Objects;
  * ABS_ORGUNIT mapping
  */
 @Entity
-@Table(name = "ORGUNIT")
+@Table(name = "ITOB_ORGUNIT")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class OrgUnit extends AbsAbstractAuditingEntity implements Serializable {
 

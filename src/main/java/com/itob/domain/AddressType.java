@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Address Type.
  */
 @Entity
-@Table(name = "ADDRESS_TYPES")
+@Table(name = "ITOB_ADDRESS_TYPES")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class AddressType extends AbsAbstractAuditingEntity implements Serializable {
 

@@ -16,7 +16,7 @@ import java.util.Objects;
  * ABS_SESSION mapping
  */
 @Entity
-@Table(name = "ABS_SESSION")
+@Table(name = "ITOB_ABS_SESSION")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Session extends AbsAbstractAuditingEntity implements Serializable {
 

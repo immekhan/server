@@ -11,7 +11,7 @@ import java.util.Objects;
  * ABS_USER_ROLES mapping
  */
 @Entity
-@Table(name = "USER_ROLES")
+@Table(name = "ITOB_USER_ROLES")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class UserRoles extends AbsAbstractAuditingEntity implements Serializable {
 

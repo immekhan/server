@@ -15,7 +15,7 @@ import java.util.Objects;
  * A role.
  */
 @Entity
-@Table(name = "ROLES")
+@Table(name = "ITOB_ROLES")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Roles extends AbsAbstractAuditingEntity implements Serializable {
 

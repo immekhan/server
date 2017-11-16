@@ -7,9 +7,9 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!-- Generate Initial Schema -->
-    <changeSet id="00000000000004" author="itob">
+    <changeSet id="00000000000004" author="abacus">
 
-        <createTable tableName="ROLES">
+        <createTable tableName="ITOB_ROLES">
             <column name="ID_ROLE" type="varchar(80)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -26,7 +26,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="PRIVILEGES">
+        <createTable tableName="ITOB_PRIVILEGES">
             <column name="ID_PRIVILEGE" type="varchar(80)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -43,7 +43,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="ROLE_PRIVILEGES">
+        <createTable tableName="ITOB_ROLE_PRIVILEGES">
             <column name="ID_ROLE" type="varchar(80)">
                 <constraints nullable="false"/>
             </column>
@@ -60,21 +60,21 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <addPrimaryKey columnNames="ID_ROLE, ID_PRIVILEGE" tableName="ROLE_PRIVILEGES"/>
+        <addPrimaryKey columnNames="ID_ROLE, ID_PRIVILEGE" tableName="ITOB_ROLE_PRIVILEGES"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_PRIVILEGE"
-                                 baseTableName="ROLE_PRIVILEGES"
+                                 baseTableName="ITOB_ROLE_PRIVILEGES"
                                  constraintName="FK_RP_ID_PRIVILEGE"
                                  referencedColumnNames="ID_PRIVILEGE"
-                                 referencedTableName="PRIVILEGES"/>
+                                 referencedTableName="ITOB_PRIVILEGES"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_ROLE"
-                                 baseTableName="ROLE_PRIVILEGES"
+                                 baseTableName="ITOB_ROLE_PRIVILEGES"
                                  constraintName="FK_RP_ID_ROLE"
                                  referencedColumnNames="ID_ROLE"
-                                 referencedTableName="ROLES"/>
+                                 referencedTableName="ITOB_ROLES"/>
 
-        <createTable tableName="SESSION_POLICIES">
+        <createTable tableName="ITOB_SESSION_POLICIES">
             <column name="ID_SESSION_POLICY" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -93,7 +93,7 @@
             <column name="ID_USER_UPDATED" type="number(18)"/>
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
-        <createTable tableName="ORGUNIT">
+        <createTable tableName="ITOB_ORGUNIT">
             <column name="ID_ORGUNIT" type="varchar(10)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -111,7 +111,7 @@
         </createTable>
 
 
-        <createTable tableName="USER_TYPE">
+        <createTable tableName="ITOB_USER_TYPE">
             <column name="ID_USER_TYPE" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -138,24 +138,24 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_ROLE"
-                                 baseTableName="USER_TYPE"
+                                 baseTableName="ITOB_USER_TYPE"
                                  constraintName="FK_UT_ID_ROLE"
                                  referencedColumnNames="ID_ROLE"
-                                 referencedTableName="ROLES"/>
+                                 referencedTableName="ITOB_ROLES"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_SESSION_POLICY"
-                                 baseTableName="USER_TYPE"
+                                 baseTableName="ITOB_USER_TYPE"
                                  constraintName="FK_UT_ID_SP"
                                  referencedColumnNames="ID_SESSION_POLICY"
-                                 referencedTableName="SESSION_POLICIES"/>
+                                 referencedTableName="ITOB_SESSION_POLICIES"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_ORGUNIT"
-                                 baseTableName="USER_TYPE"
+                                 baseTableName="ITOB_USER_TYPE"
                                  constraintName="FK_UT_ID_ORGUNIT"
                                  referencedColumnNames="ID_ORGUNIT"
-                                 referencedTableName="ORGUNIT"/>
+                                 referencedTableName="ITOB_ORGUNIT"/>
 
-        <createTable tableName="BLACKLIST_REASON">
+        <createTable tableName="ITOB_BLACKLIST_REASON">
             <column name="ID_BLACKLIST_REASON" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -172,7 +172,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="ABS_USERS">
+        <createTable tableName="ITOB_USERS">
             <column name="ID_USER" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -211,24 +211,24 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_USER_TYPE"
-                                 baseTableName="ABS_USERS"
+                                 baseTableName="ITOB_USERS"
                                  constraintName="FK_U_ID_USER_TYPE"
                                  referencedColumnNames="ID_USER_TYPE"
-                                 referencedTableName="USER_TYPE"/>
+                                 referencedTableName="ITOB_USER_TYPE"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_ORGUNIT"
-                                 baseTableName="ABS_USERS"
+                                 baseTableName="ITOB_USERS"
                                  constraintName="FK_U_ID_ORGUNIT"
                                  referencedColumnNames="ID_ORGUNIT"
-                                 referencedTableName="ORGUNIT"/>
+                                 referencedTableName="ITOB_ORGUNIT"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_BLACKLIST_REASON"
-                                 baseTableName="ABS_USERS"
+                                 baseTableName="ITOB_USERS"
                                  constraintName="FK_U_ID_BL_RSN"
                                  referencedColumnNames="ID_BLACKLIST_REASON"
-                                 referencedTableName="BLACKLIST_REASON"/>
+                                 referencedTableName="ITOB_BLACKLIST_REASON"/>
 
-        <createTable tableName="USER_ROLES">
+        <createTable tableName="ITOB_USER_ROLES">
             <column name="ID_ENTITY" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -252,24 +252,24 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_USER"
-                                 baseTableName="USER_ROLES"
+                                 baseTableName="ITOB_USER_ROLES"
                                  constraintName="FK_UR_ID_USER"
                                  referencedColumnNames="ID_USER"
-                                 referencedTableName="ABS_USERS"/>
+                                 referencedTableName="ITOB_USERS"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_ROLE"
-                                 baseTableName="USER_ROLES"
+                                 baseTableName="ITOB_USER_ROLES"
                                  constraintName="FK_UR_ID_ROLE"
                                  referencedColumnNames="ID_ROLE"
-                                 referencedTableName="ROLES"/>
+                                 referencedTableName="ITOB_ROLES"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_ORGUNIT"
-                                 baseTableName="USER_ROLES"
+                                 baseTableName="ITOB_USER_ROLES"
                                  constraintName="FK_UR_ID_ORGUNIT"
                                  referencedColumnNames="ID_ORGUNIT"
-                                 referencedTableName="ORGUNIT"/>
+                                 referencedTableName="ITOB_ORGUNIT"/>
 
-        <createTable tableName="USER_PRIVILEGES">
+        <createTable tableName="ITOB_USER_PRIVILEGES">
             <column name="ID_ENTITY" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -293,24 +293,24 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_USER"
-                                 baseTableName="USER_PRIVILEGES"
+                                 baseTableName="ITOB_USER_PRIVILEGES"
                                  constraintName="FK_UP_ID_USER"
                                  referencedColumnNames="ID_USER"
-                                 referencedTableName="ABS_USERS"/>
+                                 referencedTableName="ITOB_USERS"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_PRIVILEGE"
-                                 baseTableName="USER_PRIVILEGES"
+                                 baseTableName="ITOB_USER_PRIVILEGES"
                                  constraintName="FK_UP_ID_PRIVILEGE"
                                  referencedColumnNames="ID_PRIVILEGE"
-                                 referencedTableName="PRIVILEGES"/>
+                                 referencedTableName="ITOB_PRIVILEGES"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_ORGUNIT"
-                                 baseTableName="USER_PRIVILEGES"
+                                 baseTableName="ITOB_USER_PRIVILEGES"
                                  constraintName="FK_UP_ID_ORGUNIT"
                                  referencedColumnNames="ID_ORGUNIT"
-                                 referencedTableName="ORGUNIT"/>
+                                 referencedTableName="ITOB_ORGUNIT"/>
 
-        <createTable tableName="IDENTIFICATION_TYPES">
+        <createTable tableName="ITOB_IDENTIFICATION_TYPES">
             <column name="ID_IDENTIFICATION_TYPE" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -327,7 +327,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="USER_IDENTIFICATIONS">
+        <createTable tableName="ITOB_USER_IDENTIFICATIONS">
             <column name="ID_USER_IDENTIFICATION" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -357,24 +357,24 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_USER"
-                                 baseTableName="USER_IDENTIFICATIONS"
+                                 baseTableName="ITOB_USER_IDENTIFICATIONS"
                                  constraintName="FK_UI_ID_USER"
                                  referencedColumnNames="ID_USER"
-                                 referencedTableName="ABS_USERS"/>
+                                 referencedTableName="ITOB_USERS"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_IDENTIFICATION_TYPE"
-                                 baseTableName="USER_IDENTIFICATIONS"
+                                 baseTableName="ITOB_USER_IDENTIFICATIONS"
                                  constraintName="FK_UI_ID_IDENTIFICATION"
                                  referencedColumnNames="ID_IDENTIFICATION_TYPE"
-                                 referencedTableName="IDENTIFICATION_TYPES"/>
+                                 referencedTableName="ITOB_IDENTIFICATION_TYPES"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_ORGUNIT"
-                                 baseTableName="USER_IDENTIFICATIONS"
+                                 baseTableName="ITOB_USER_IDENTIFICATIONS"
                                  constraintName="FK_UI_ID_ORGUNIT"
                                  referencedColumnNames="ID_ORGUNIT"
-                                 referencedTableName="ORGUNIT"/>
+                                 referencedTableName="ITOB_ORGUNIT"/>
 
-        <createTable tableName="CREDENTIAL_TYPES">
+        <createTable tableName="ITOB_CREDENTIAL_TYPES">
             <column name="ID_CREDENTIAL_TYPE" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -391,7 +391,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="CREDENTIAL_POLICIES">
+        <createTable tableName="ITOB_CREDENTIAL_POLICIES">
             <column name="ID_CREDENTIAL_POLICY" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -438,7 +438,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="USER_TYPE_CRED_POLICY">
+        <createTable tableName="ITOB_USER_TYPE_CRED_POLICY">
             <column name="ID_ENTITY" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -462,24 +462,24 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_USER_TYPE"
-                                 baseTableName="USER_TYPE_CRED_POLICY"
+                                 baseTableName="ITOB_USER_TYPE_CRED_POLICY"
                                  constraintName="FK_UTCP_ID_UT"
                                  referencedColumnNames="ID_USER_TYPE"
-                                 referencedTableName="USER_TYPE"/>
+                                 referencedTableName="ITOB_USER_TYPE"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_CREDENTIAL_TYPE"
-                                 baseTableName="USER_TYPE_CRED_POLICY"
+                                 baseTableName="ITOB_USER_TYPE_CRED_POLICY"
                                  constraintName="FK_UTCP_ID_CT"
                                  referencedColumnNames="ID_CREDENTIAL_TYPE"
-                                 referencedTableName="CREDENTIAL_TYPES"/>
+                                 referencedTableName="ITOB_CREDENTIAL_TYPES"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_CREDENTIAL_POLICY"
-                                 baseTableName="USER_TYPE_CRED_POLICY"
+                                 baseTableName="ITOB_USER_TYPE_CRED_POLICY"
                                  constraintName="FK_UTCP_ID_CP"
                                  referencedColumnNames="ID_CREDENTIAL_POLICY"
-                                 referencedTableName="CREDENTIAL_POLICIES"/>
+                                 referencedTableName="ITOB_CREDENTIAL_POLICIES"/>
 
-        <createTable tableName="CREDENTIAL_STATUS">
+        <createTable tableName="ITOB_CREDENTIAL_STATUS">
             <column name="ID_CREDENTIAL_STATUS" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -496,7 +496,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="USER_CREDENTIALS">
+        <createTable tableName="ITOB_USER_CREDENTIALS">
             <column name="ID_USER_CREDENTIAL" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -536,24 +536,24 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_USER"
-                                 baseTableName="USER_CREDENTIALS"
+                                 baseTableName="ITOB_USER_CREDENTIALS"
                                  constraintName="FK_UC_ID_USER"
                                  referencedColumnNames="ID_USER"
-                                 referencedTableName="ABS_USERS"/>
+                                 referencedTableName="ITOB_USERS"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_CREDENTIAL_TYPE"
-                                 baseTableName="USER_CREDENTIALS"
+                                 baseTableName="ITOB_USER_CREDENTIALS"
                                  constraintName="FK_UC_ID_CT"
                                  referencedColumnNames="ID_CREDENTIAL_TYPE"
-                                 referencedTableName="CREDENTIAL_TYPES"/>
+                                 referencedTableName="ITOB_CREDENTIAL_TYPES"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_CREDENTIAL_STATUS"
-                                 baseTableName="USER_CREDENTIALS"
+                                 baseTableName="ITOB_USER_CREDENTIALS"
                                  constraintName="FK_UC_CS"
                                  referencedColumnNames="ID_CREDENTIAL_STATUS"
-                                 referencedTableName="CREDENTIAL_STATUS"/>
+                                 referencedTableName="ITOB_CREDENTIAL_STATUS"/>
 
-        <createTable tableName="ADDRESS_TYPES">
+        <createTable tableName="ITOB_ADDRESS_TYPES">
             <column name="ID_ADDRESS_TYPE" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -570,7 +570,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="ADDRESS_STATUS">
+        <createTable tableName="ITOB_ADDRESS_STATUS">
             <column name="ID_ADDRESS_STATUS" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -587,7 +587,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="COUNTRY">
+        <createTable tableName="ITOB_COUNTRY">
             <column name="ID_COUNTRY" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -607,14 +607,14 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="CITY">
+        <createTable tableName="ITOB_CITY">
             <column name="ID_CITY" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="STR_CITY" type="varchar(80)">
                 <constraints nullable="false"/>
             </column>
-             <column name="ID_COUNTRY" type="number(5)">
+            <column name="ID_COUNTRY" type="number(5)">
                 <constraints nullable="false"/>
             </column>
             <column name="ID_USER_CREATED" type="number(18)">
@@ -628,12 +628,12 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_COUNTRY"
-                                 baseTableName="CITY"
+                                 baseTableName="ITOB_CITY"
                                  constraintName="FK_UC_ID_COUNTRY"
                                  referencedColumnNames="ID_COUNTRY"
-                                 referencedTableName="COUNTRY"/>
+                                 referencedTableName="ITOB_COUNTRY"/>
 
-        <createTable tableName="USER_ADDRESSES">
+        <createTable tableName="ITOB_USER_ADDRESSES">
             <column name="ID_ADDRESS" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -672,36 +672,36 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_USER"
-                                 baseTableName="USER_ADDRESSES"
+                                 baseTableName="ITOB_USER_ADDRESSES"
                                  constraintName="FK_UA_ID_USER"
                                  referencedColumnNames="ID_USER"
-                                 referencedTableName="ABS_USERS"/>
+                                 referencedTableName="ITOB_USERS"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_ADDRESS_TYPE"
-                                 baseTableName="USER_ADDRESSES"
+                                 baseTableName="ITOB_USER_ADDRESSES"
                                  constraintName="FK_UA_ID_AT"
                                  referencedColumnNames="ID_ADDRESS_TYPE"
-                                 referencedTableName="ADDRESS_TYPES"/>
+                                 referencedTableName="ITOB_ADDRESS_TYPES"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_ADDRESS_STATUS"
-                                 baseTableName="USER_ADDRESSES"
+                                 baseTableName="ITOB_USER_ADDRESSES"
                                  constraintName="FK_UA_ID_AS"
                                  referencedColumnNames="ID_ADDRESS_STATUS"
-                                 referencedTableName="ADDRESS_STATUS"/>
+                                 referencedTableName="ITOB_ADDRESS_STATUS"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_COUNTRY"
-                                 baseTableName="USER_ADDRESSES"
+                                 baseTableName="ITOB_USER_ADDRESSES"
                                  constraintName="FK_UA_ID_CNTRY"
                                  referencedColumnNames="ID_COUNTRY"
-                                 referencedTableName="COUNTRY"/>
+                                 referencedTableName="ITOB_COUNTRY"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_CITY"
-                                 baseTableName="USER_ADDRESSES"
+                                 baseTableName="ITOB_USER_ADDRESSES"
                                  constraintName="FK_UA_ID_CITY"
                                  referencedColumnNames="ID_CITY"
-                                 referencedTableName="CITY"/>
+                                 referencedTableName="ITOB_CITY"/>
 
-        <createTable tableName="ERROR_LEVELS">
+        <createTable tableName="ITOB_ERROR_LEVELS">
             <column name="ID_ERROR_LEVEL" type="varchar(80)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -715,7 +715,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="ERROR_CODES">
+        <createTable tableName="ITOB_ERROR_CODES">
             <column name="ID_ERROR_CODE" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -736,12 +736,12 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_ERROR_LEVEL"
-                                 baseTableName="ERROR_CODES"
+                                 baseTableName="ITOB_ERROR_CODES"
                                  constraintName="FK_EC_ID_ERROR_LEVEL"
                                  referencedColumnNames="ID_ERROR_LEVEL"
-                                 referencedTableName="ERROR_LEVELS"/>
+                                 referencedTableName="ITOB_ERROR_LEVELS"/>
 
-        <createTable tableName="SESSION">
+        <createTable tableName="ITOB_SESSION">
             <column name="STR_SESSION_ID" type="varchar(80)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -751,7 +751,7 @@
             <column name="STR_IDENTIFICATION" type="varchar(80)">
                 <constraints nullable="false"/>
             </column>
-             <column name="ID_ORGUNIT" type="varchar(10)">
+            <column name="ID_ORGUNIT" type="varchar(10)">
                 <constraints nullable="true"/>
             </column>
             <column name="DATE_LOGIN" type="timestamp" defaultValueDate="${now}">
@@ -774,7 +774,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="COMPANY_TYPE">
+        <createTable tableName="ITOB_COMPANY_TYPE">
             <column name="ID_COMPANY_TYPE" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -791,7 +791,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="COMPANY">
+        <createTable tableName="ITOB_COMPANY">
             <column name="ID_COMPANY" type="varchar(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -816,12 +816,12 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_COMPANY_TYPE"
-                                 baseTableName="COMPANY"
+                                 baseTableName="ITOB_COMPANY"
                                  constraintName="FK_COMPANY_TYPE"
                                  referencedColumnNames="ID_COMPANY_TYPE"
-                                 referencedTableName="COMPANY_TYPE"/>
+                                 referencedTableName="ITOB_COMPANY_TYPE"/>
 
-        <createTable tableName="DEVICE_TYPE">
+        <createTable tableName="ITOB_DEVICE_TYPE">
             <column name="ID_DEVICE_TYPE" type="number(5)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -838,7 +838,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="COMPANY_DEVICE_TYPE">
+        <createTable tableName="ITOB_COMPANY_DEVICE_TYPE">
             <column name="ID_APP" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -862,24 +862,24 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_COMPANY"
-                                 baseTableName="COMPANY_DEVICE_TYPE"
+                                 baseTableName="ITOB_COMPANY_DEVICE_TYPE"
                                  constraintName="FK_CDT_ID_COMPANY"
                                  referencedColumnNames="ID_COMPANY"
-                                 referencedTableName="COMPANY"/>
+                                 referencedTableName="ITOB_COMPANY"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_DEVICE_TYPE"
-                                 baseTableName="COMPANY_DEVICE_TYPE"
+                                 baseTableName="ITOB_COMPANY_DEVICE_TYPE"
                                  constraintName="FK_CDT_ID_DEVICE_TYPE"
                                  referencedColumnNames="ID_DEVICE_TYPE"
-                                 referencedTableName="DEVICE_TYPE"/>
+                                 referencedTableName="ITOB_DEVICE_TYPE"/>
 
         <addForeignKeyConstraint baseColumnNames="ID_ORGUNIT"
-                                 baseTableName="COMPANY_DEVICE_TYPE"
+                                 baseTableName="ITOB_COMPANY_DEVICE_TYPE"
                                  constraintName="FK_CDT_ID_ORGUNIT"
                                  referencedColumnNames="ID_ORGUNIT"
-                                 referencedTableName="ORGUNIT"/>
+                                 referencedTableName="ITOB_ORGUNIT"/>
 
-        <createTable tableName="COMP_DEV_TYP_CRED">
+        <createTable tableName="ITOB_COMP_DEV_TYP_CRED">
             <column name="ID_ENTITY" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -905,18 +905,18 @@
         </createTable>
 
         <addForeignKeyConstraint baseColumnNames="ID_APP"
-                                 baseTableName="COMP_DEV_TYP_CRED"
+                                 baseTableName="ITOB_COMP_DEV_TYP_CRED"
                                  constraintName="FK_CDTC_ID_APP"
                                  referencedColumnNames="ID_APP"
-                                 referencedTableName="COMPANY_DEVICE_TYPE"/>
+                                 referencedTableName="ITOB_COMPANY_DEVICE_TYPE"/>
 
         <addForeignKeyConstraint baseColumnNames="STR_CLIENT_ID"
-                                 baseTableName="COMP_DEV_TYP_CRED"
+                                 baseTableName="ITOB_COMP_DEV_TYP_CRED"
                                  constraintName="FK_CDTC_CLIENT_ID"
                                  referencedColumnNames="client_id"
                                  referencedTableName="oauth_client_details"/>
 
-        <createTable tableName="FILE_TYPE">
+        <createTable tableName="ITOB_FILE_TYPE">
             <column name="ID_FILE_TYPE" type="varchar(25)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -933,7 +933,7 @@
             <column name="DATE_LAST_UPDATED" type="timestamp"/>
         </createTable>
 
-        <createTable tableName="DUMMY_FORM">
+        <createTable tableName="ITOB_DUMMY_FORM">
             <column name="ID_ENTITY" type="number(18)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

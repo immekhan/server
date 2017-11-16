@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Company Type.
  */
 @Entity
-@Table(name = "COMPANY_TYPE")
+@Table(name = "ITOB_COMPANY_TYPE")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class CompanyType extends AbsAbstractAuditingEntity implements Serializable {
 

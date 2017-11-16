@@ -7,12 +7,12 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!-- Load Initial Schema Data -->
-    <changeSet id="00000000000005" author="itob">
+    <changeSet id="00000000000005" author="abacus">
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/orgunit.csv"
                   separator=";"
-                  tableName="orgunit">
+                  tableName="ITOB_orgunit">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
@@ -20,175 +20,175 @@
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/address_status.csv"
                   separator=";"
-                  tableName="address_status">
+                  tableName="ITOB_address_status">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/address_types.csv"
                   separator=";"
-                  tableName="address_types">
+                  tableName="ITOB_address_types">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/blacklist_reason.csv"
                   separator=";"
-                  tableName="blacklist_reason">
+                  tableName="ITOB_blacklist_reason">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/credential_policies.csv"
                   separator=";"
-                  tableName="credential_policies">
+                  tableName="ITOB_credential_policies">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/credential_status.csv"
                   separator=";"
-                  tableName="credential_status">
+                  tableName="ITOB_credential_status">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/credential_types.csv"
                   separator=";"
-                  tableName="credential_types">
+                  tableName="ITOB_credential_types">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/identification_types.csv"
                   separator=";"
-                  tableName="identification_types">
+                  tableName="ITOB_identification_types">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/roles.csv"
                   separator=";"
-                  tableName="roles">
+                  tableName="ITOB_roles">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/country.csv"
                   separator=";"
-                  tableName="country">
+                  tableName="ITOB_country">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/city.csv"
                   separator=";"
-                  tableName="city">
+                  tableName="ITOB_city">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/session_policies.csv"
                   separator=";"
-                  tableName="session_policies">
+                  tableName="ITOB_session_policies">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/user_type.csv"
                   separator=";"
-                  tableName="user_type">
+                  tableName="ITOB_user_type">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/user_type_cred_policy.csv"
                   separator=";"
-                  tableName="user_type_cred_policy">
+                  tableName="ITOB_user_type_cred_policy">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
-                  file="config/liquibase/csv/abs_users.csv"
+                  file="config/liquibase/csv/itob_users.csv"
                   separator=";"
-                  tableName="abs_users">
+                  tableName="ITOB_users">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/user_identifications.csv"
                   separator=";"
-                  tableName="user_identifications">
+                  tableName="ITOB_user_identifications">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/user_roles.csv"
                   separator=";"
-                  tableName="user_roles">
+                  tableName="ITOB_user_roles">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/privileges.csv"
                   separator=";"
-                  tableName="privileges">
+                  tableName="ITOB_privileges">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/role_privileges.csv"
                   separator=";"
-                  tableName="role_privileges">
+                  tableName="ITOB_role_privileges">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/user_credentials.csv"
                   separator=";"
-                  tableName="USER_CREDENTIALS">
+                  tableName="ITOB_USER_CREDENTIALS">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/company_type.csv"
                   separator=";"
-                  tableName="COMPANY_TYPE">
+                  tableName="ITOB_COMPANY_TYPE">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/device_type.csv"
                   separator=";"
-                  tableName="DEVICE_TYPE">
+                  tableName="ITOB_DEVICE_TYPE">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/company.csv"
                   separator=";"
-                  tableName="COMPANY">
+                  tableName="ITOB_COMPANY">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/company_device_type.csv"
                   separator=";"
-                  tableName="COMPANY_DEVICE_TYPE">
+                  tableName="ITOB_COMPANY_DEVICE_TYPE">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/comp_dev_type_cred.csv"
                   separator=";"
-                  tableName="COMP_DEV_TYP_CRED">
+                  tableName="ITOB_COMP_DEV_TYP_CRED">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 
         <loadData encoding="UTF-8"
                   file="config/liquibase/csv/file_type.csv"
                   separator=";"
-                  tableName="FILE_TYPE">
+                  tableName="ITOB_FILE_TYPE">
             <column name="DATE_CREATED" type="DATE" />
         </loadData>
 

@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Country.
  */
 @Entity
-@Table(name = "COUNTRY")
+@Table(name = "ITOB_COUNTRY")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Country extends AbsAbstractAuditingEntity implements Serializable {
 

@@ -11,7 +11,7 @@ import java.util.Objects;
  * ABS_USER_PRIVILEGES mapping
  */
 @Entity
-@Table(name = "USER_PRIVILEGES")
+@Table(name = "ITOB_USER_PRIVILEGES")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class UserPrivileges extends AbsAbstractAuditingEntity implements Serializable {
 

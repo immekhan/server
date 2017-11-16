@@ -12,7 +12,7 @@ import java.util.Objects;
  * A ITOBDummyForm.
  */
 @Entity
-@Table(name = "dummy_form")
+@Table(name = "ITOB_dummy_form")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class DummyForm implements Serializable {
 

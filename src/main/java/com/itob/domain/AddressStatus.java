@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Address Status.
  */
 @Entity
-@Table(name = "ADDRESS_STATUS")
+@Table(name = "ITOB_ADDRESS_STATUS")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class AddressStatus extends AbsAbstractAuditingEntity implements Serializable {
 

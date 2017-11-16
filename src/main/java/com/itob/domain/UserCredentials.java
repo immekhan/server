@@ -13,7 +13,7 @@ import java.util.Objects;
  * User Credentials Mapping
  */
 @Entity
-@Table(name = "USER_CREDENTIALS")
+@Table(name = "ITOB_USER_CREDENTIALS")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class UserCredentials extends AbsAbstractAuditingEntity implements Serializable {
 

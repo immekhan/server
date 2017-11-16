@@ -11,7 +11,7 @@ import java.util.Objects;
  * A user.
  */
 @Entity
-@Table(name = "USER_IDENTIFICATIONS")
+@Table(name = "ITOB_USER_IDENTIFICATIONS")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class UserIdentification extends AbsAbstractAuditingEntity implements Serializable {
 

@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Credential Status.
  */
 @Entity
-@Table(name = "CREDENTIAL_STATUS")
+@Table(name = "ITOB_CREDENTIAL_STATUS")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class CredentialStatus extends AbsAbstractAuditingEntity implements Serializable {
 

@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Identification Type.
  */
 @Entity
-@Table(name = "IDENTIFICATION_TYPES")
+@Table(name = "ITOB_IDENTIFICATION_TYPES")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class IdentificationType extends AbsAbstractAuditingEntity implements Serializable {
 

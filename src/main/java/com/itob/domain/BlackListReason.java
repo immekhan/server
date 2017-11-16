@@ -11,7 +11,7 @@ import java.util.Objects;
  * A BlackList Reason.
  */
 @Entity
-@Table(name = "BLACKLIST_REASON")
+@Table(name = "ITOB_BLACKLIST_REASON")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class BlackListReason extends AbsAbstractAuditingEntity implements Serializable {
 

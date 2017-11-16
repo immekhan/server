@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name="ERROR_CODES")
+@Table(name="ITOB_ERROR_CODES")
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class ErrorCode extends AbsAbstractAuditingEntity
         implements Serializable {

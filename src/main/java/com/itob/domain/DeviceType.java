@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Device Type.
  */
 @Entity
-@Table(name = "DEVICE_TYPE")
+@Table(name = "ITOB_DEVICE_TYPE")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class DeviceType extends AbsAbstractAuditingEntity implements Serializable {
 

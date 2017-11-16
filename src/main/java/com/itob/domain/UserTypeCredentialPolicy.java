@@ -12,7 +12,7 @@ import java.util.Objects;
  * Based on the User type and Credential Type , Credential Policy is applied
  */
 @Entity
-@Table(name = "USER_TYPE_CRED_POLICY")
+@Table(name = "ITOB_USER_TYPE_CRED_POLICY")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class UserTypeCredentialPolicy extends AbsAbstractAuditingEntity implements Serializable {
 
