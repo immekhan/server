@@ -1,0 +1,3 @@
+ID_ENTITY;ID_APP;STR_CLIENT_ID;STR_CREDENTIALS;DAT_EXPIRY;ID_USER_CREATED;DATE_CREATED;ID_USER_UPDATED;DATE_LAST_UPDATED
+1;1;appapp;my-secret-token-to-change-in-production;;0;sysdate;;
+2;1;parent-client-id;parent-client-secret;;0;sysdate;;

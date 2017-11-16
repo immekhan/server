@@ -1,0 +1,6 @@
+ID_CITY;STR_CITY;ID_COUNTRY;ID_USER_CREATED;DATE_CREATED;ID_USER_UPDATED;DATE_LAST_UPDATED
+1;Lahore;1;0;sysdate;;
+2;Multan;1;0;sysdate;;
+3;Karachi;1;0;sysdate;;
+4;Pishwar;1;0;sysdate;;
+5;Maree;1;0;sysdate;;

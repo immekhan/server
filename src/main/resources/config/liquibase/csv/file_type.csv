@@ -1,0 +1,4 @@
+ID_FILE_TYPE;STR_FILE_TYPE;ID_USER_CREATED;DATE_CREATED;ID_USER_UPDATED;DATE_LAST_UPDATED
+image/png;image/png;0;sysdate;;
+image/jpeg;image/jpeg;0;sysdate;;
+application/vnd.ms-excel;application/vnd.ms-excel;0;sysdate;;

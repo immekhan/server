@@ -1,0 +1,330 @@
+--------------------------------------------------------------------------
+Change Instructions
+--------------------------------------------------------------------------
+
+**************************************************************************
+*******************Liquibase schema generation info***********************
+**************************************************************************
+
+ _______________________________________________________________________________________
+|Liquibase data type   | SQL Server data type	                      | Oracle data type|
+|______________________|______________________________________________|_________________|
+| bigint	           | bigint	                                      | number(38,0)    |
+|______________________|______________________________________________|_________________|
+| blob	               | varbinary(max)	                              | blob            |
+|______________________|______________________________________________|_________________|
+| boolean	           | bit	                                      | number(1)       |
+|______________________|______________________________________________|_________________|
+| char	               | char	                                      | char            |
+|______________________|______________________________________________|_________________|
+| clob	               | nvarchar(max)	                              | clob            |
+|______________________|______________________________________________|_________________|
+| currency	           | money	                                      | number(15,2)    |
+|______________________|______________________________________________|_________________|
+| datetime	           | smalldatetime or datetime2	                  | timestamp       |
+|______________________|______________________________________________|_________________|
+| date	               | date or smalldatetime (version <= 2005)      | date            |
+|______________________|______________________________________________|_________________|
+| decimal	           | decimal	                                  | decimal         |
+|______________________|______________________________________________|_________________|
+| double	           | float	                                      | float(24)       |
+|______________________|______________________________________________|_________________|
+| float	               | float	                                      | float           |
+|______________________|______________________________________________|_________________|
+| int	               | int	                                      | number(10)      |
+|______________________|______________________________________________|_________________|
+| mediumint	           | mediumint	                                  | mediumint       |
+|______________________|______________________________________________|_________________|
+| nchar	               | nchar	                                      | nchar           |
+|______________________|______________________________________________|_________________|
+| nvarchar	           | nvarchar	                                  | nvarchar2       |
+|______________________|______________________________________________|_________________|
+| number(n)	           | numeric	                                  | number          |
+|______________________|______________________________________________|_________________|
+| smallint	           | smallint	                                  | number(5)       |
+|______________________|______________________________________________|_________________|
+| time	               | time or datetime (version <= 2005)	          | date            |
+|______________________|______________________________________________|_________________|
+| timestamp	           | datetime	                                  | timestamp       |
+|______________________|______________________________________________|_________________|
+| tinyint	           | tinyint	                                  | number(3)       |
+|______________________|______________________________________________|_________________|
+| uuid	               | uniqueidentifier	                          | raw(16)         |
+|______________________|______________________________________________|_________________|
+| varchar(n)           | varchar	                                  | varchar2        |
+|______________________|______________________________________________|_________________|
+
+****************************************************
+There are three way to generate schema in Liquibase*
+****************************************************
+____
+1. | By writing Liquibase based script
+___|
+E.G
+<changeSet id="00000000000001" author="jhipster">
+        <createTable tableName="jhi_user">
+         //etc columns
+        </createTable>
+</changeSet>
+____
+2. | Through SQL file
+___|
+
+ Add these 2 lines on top of you sql file :
+_________________________________________
+--liquibase formatted sql                |
+--changeset {authorName}:{id}            |
+_________________________________________|
+change authorName and id as per your wish . You can also do something like this in your changelogname.xml file:
+
+_________________________________________
+<changeSet author="authorName" id=”id”>  |
+   <sqlFile path="insertcommands.sql"/>  |
+</changeSet>                             |
+_________________________________________|
+
+help Link  : --> https://stackoverflow.com/a/33924979/3902906
+
+____
+3. | Through SQL script directly
+___|
+
+help Link  : --> https://stackoverflow.com/a/34380327/3902906
+
+For Example :
+ <changeSet author="authorname" id="changeSetId">
+        <comment>create table</comment>
+        <sql dbms="h2, oracle"
+             splitStatements="true"
+             stripComments="true">
+            create table employee(
+            id number(5) PRIMARY Key,
+            name varchar2(10)
+            );
+        </sql>
+ </changeSet>
+
+Official Website of LiquiBase: http://www.liquibase.org/quickstart.html
+**************************************************************************
+****************Liquibase schema generation info End**********************
+**************************************************************************
+
+
+****************************************************
+Login Customization*********************************
+****************************************************
+____________________________________________________________________________________
+    Files created                               |      Files Modified               |
+________________________________________________|___________________________________|
+                                             Entities                               |
+------------------------------------------------|-----------------------------------|
+    AddressStatus                            |                                   |
+    Roles                                    |                                   |
+    RolePrivilege                            |                                   |
+    CredentialStatus                         |                                   |
+    tractAuditingEntity                      |                                   |
+    UserCredentials                          |                                   |
+    UserCredentialTypePolicy                 |                                   |
+    ErrorCode                                |                                   |
+    UserPrivileges                           |                                   |
+    UserAddress                              |                                   |
+    OrgUnit                                  |                                   |
+    UserIdentification                       |                                   |
+    CredentialType                           |                                   |
+    UserRoles                                |                                   |
+    Country                                  |                                   |
+    City                                     |                                   |
+    User                                     |                                   |
+    SessionPolicy                            |                                   |
+    BlackListReason                          |                                   |
+    UserType                                 |                                   |
+    CredentialPolicy                         |                                   |
+    Privileges                               |                                   |
+    IdentificationType                       |                                   |
+    AddressType                              |                                   |
+------------------------------------------------------------------------------------|
+                                        Repositories                                |
+------------------------------------------------------------------------------------|
+    UserRolesRepository                      |                                   |
+    CredentialStatusRepository               |                                   |
+    OrgUnitRepository                        |                                   |
+    UserPrivilegesRepository                 |                                   |
+    UserAddressRepository                    |                                   |
+    SessionPolicyRepository                  |                                   |
+    CredentialPolicyRepository               |                                   |
+    CountryRepository                        |                                   |
+    RolePrivilegeRepository                  |                                   |
+    IdentificationTypeRepository             |                                   |
+    UserTypeRepository                       |                                   |
+    CityRepository                           |                                   |
+    PrivilegeRepository                      |                                   |
+    UserCredentialTypePolicyRepository       |                                   |
+    ErrorCodeRepository                      |                                   |
+    RolesRepository                          |                                   |
+    UserIdentificationRepository             |                                   |
+------------------------------------------------------------------------------------|
+                                        Services                                    |
+------------------------------------------------------------------------------------|
+   UserUtilityService                        |  DomainUserDetailsService         |
+   UtilityService                            |  SecurityUtils                    |
+                                             |                                   |
+                                             |                                   |
+------------------------------------------------------------------------------------|
+                   Exception, Controller , DTO , Constant Files , Test Files ,xml   |
+------------------------------------------------------------------------------------|
+   ListDTO                                   | ManagedUserVM                     |
+   CountryDTO                                | AccountResource                   |
+   UserDTO                                   | UserDTO                           |
+   UserTypeDTO                               | 00000000000000_initial_schema.xml |
+   BaseDTO                                   | AccountResourceIntTest            |
+   CityDTO                                   | UserResourceIntTest               |
+   SearchCriteriaDTO                         | CacheConfiguration                |
+                                             |                                   |
+   Constants                                 |                                   |
+   ErrorConstants                            |                                   |
+   00000000000001_itob_initial_schema.xml    |                                   |
+   00000000000002_itob_load_schema.xml       |                                   |
+                                             |                                   |
+   UtilityResource                           |                                   |
+   UserResource                              |                                   |
+   CustomException                           |                                   |
+ ____________________________________________|___________________________________|
+
+
+
+ Note : Custom SQL and HQL example are in RolePrivilegeRepositoryImpl
+
+***************************************************
+UNLOAD DEFAULT TABLE SCHEMA JHI_USER **************
+***************************************************
+Updated Files
+-------------
+00000000000000_initial_schema.xml
+
+
+------------------
+Job Configuration||
+------------------
+________________________________________________________________________
+Create Files                          |             Modified Files      |
+______________________________________|_________________________________|
+QuartzJobSchedulerConfiguration.java  |  pom.xml                        |
+ComplexJobService.java                |                                 |
+ComplexScheduledJob.java              |                                 |
+SimpleJobOne.java                     |                                 |
+SimpleJobTwo.java                     |                                 |
+properties                            |                                 |
+quartz.properties                     |                                 |
+------------------------------------------------------------------------|
+
+
+-----------------------------
+Credential Policy Work Regex||
+-----------------------------
+________________________________________________________________________________
+Create Files                          |             Modified Files              |
+______________________________________|_________________________________________|
+                                    Config
+______________________________________|_________________________________________|
+UserDetailsAuthenticationProvider     |  SecurityConfiguration                  |
+________________________________________________________________________________|
+                   Repository, Domain , Service , Liquibase                     |
+______________________________________|_________________________________________|
+                                      |  UserTypeCredentialPolicyRepository     |
+                                      |  UserUtilityService                     |
+                                      |  UserTypeCredentialPolicy               |
+                                      |  CredentialPolicy                       |
+                                      |  CacheConfiguration                     |
+                                      |  DomainUserDetailsService               |
+                                      |  00000000000002__load_schema.xml        |
+                                      |  00000000000001__initial_schema.xml     |
+                                      |  _credential_policies.csv               |
+--------------------------------------------------------------------------------|
+
+------------------------------------------------
+Session Work [Abacus Auditing table if needed]||
+------------------------------------------------
+____________________________________________________________________________
+Create Files                          |             Modified Files          |
+______________________________________|_____________________________________|
+Session                            |00000000000001__initial_schema.xml|
+SessionRepository                  |                                     |
+----------------------------------------------------------------------------|
+Note there is nothing implemented in the session related task due to some reasons
+but if someone wants to use this session table as auditing table it can be use easily.
+Please update CustomAuditEventRepository.java for implementation of session as auditing.
+The reason why I'm writing this because for now each time a new entry of audit is added in
+the JHI_PERSISTENT_AUDIT_EVENT  and JHI_PERSISTENT_AUDIT_EVT_DATA tables if in future
+updated able audit entry is required in _SESSION then first need to fetch logined user details
+from SecurityContext and based on logic enter or update entry.
+
+
+-----------------------------------
+Middleware rough work [Host work]|| Rest,Socket
+-----------------------------------
+____________________________________________________________________________
+Create Files                          |             Modified Files          |
+______________________________________|_____________________________________|
+ResponseDTO                           |AppApp [socket server code]          |
+CarDTO[needs tobe deleted reason below|UtilityService                    |
+                                      |UserResource                         |
+                                      |                                     |
+----------------------------------------------------------------------------|
+UserResource add code for calling reset service running on different server
+Socket client code.
+Note: these code need to be seprated before production based on the requirement.
+Note: CarDTO is test call beacuse it was use to convert the rest service call response in to object
+---------------------
+Note ResponseDTO || Should be returned on every rest call because it has gray structure.
+---------------------
+
+
+-----------------------------------------
+Login Logic updated [[Channel work]]
+-----------------------------------------
+________________________________________________________________________________________
+Create Files                                    |             Modified Files            |
+________________________________________________|_______________________________________|
+Company.java                                 |AuthenticationProvider.java         |
+CompanyDeviceType.java                       |CacheConfiguration.java                |
+CompanyDeviceTypeCredential.java             |DomainUserDetailsService.java          |
+CompanyType.java                             |SecurityUtils.java                     |
+DeviceType.java                              |UserUtilityService.java             |
+CompanyDeviceTypeCredentialRepository.java   |UtilityService.java                 |
+CompanyDeviceTypeRepository.java             |Constants.java                      |
+DeviceTypeRepository.java                    |                                       |
+CompanyRepository.java                       |                                       |
+CompanyTypeRepository.java                   |                                       |
+________________________________________________________________________________________|
+                             liquibase schemas and csv files                            |
+________________________________________________|_______________________________________|
+                                                |00000000000001_itob_initial_schema.xml  |
+                                                |00000000000002_itob_load_schema.xml     |
+                                                |---------------------------------------|
+                                                |_address_status.csv                    |
+comp_dev_type_cred.csv                          |address_types.csv                      |
+company.csv                                     |blacklist_reason.csv                   |
+company_device_type.csv                         |city.csv                               |
+company_type.csv                                |country.csv                            |
+device_type.csv                                 |credential_policies.csv                |
+                                                |   credential_status.csv               |
+                                                |   credential_types.csv                |
+                                                |   identification_types.csv            |
+                                                |   orgunit.csv                         |
+                                                |   privileges.csv                      |
+                                                |   role_privileges.csv                 |
+                                                |   roles.csv                           |
+                                                |   session_policies.csv                |
+                                                |   user_credentials.csv                |
+                                                |   user_identifications.csv            |
+                                                |   user_roles.csv                      |
+                                                |   user_type.csv                       |
+                                                |   user_type_cred_policy.csv           |
+                                                |   users.csv                           |
+                                                |oauth_client_details.csv               |
+                                                |---------------------------------------|
+                                                |application-dev.yml                    |
+                                                |application-prod.yml                   |
+                                                |pom.xml                                |
+----------------------------------------------------------------------------------------|
+

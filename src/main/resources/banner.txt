@@ -1,0 +1,2 @@
+
+${AnsiColor.BRIGHT_BLUE}:: Abacus :: Running Spring Boot ${spring-boot.version}

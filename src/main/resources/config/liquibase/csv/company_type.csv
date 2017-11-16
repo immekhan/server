@@ -1,0 +1,4 @@
+ID_COMPANY_TYPE;STR_COMPANY_TYPE;ID_USER_CREATED;DATE_CREATED;ID_USER_UPDATED;DATE_LAST_UPDATED
+0;Parent Network;0;sysdate;;
+1;Partner Network;0;sysdate;;
+2;Third Party;0;sysdate;;

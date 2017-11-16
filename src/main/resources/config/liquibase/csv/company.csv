@@ -1,0 +1,4 @@
+ID_COMPANY;STR_COMPANY_NAME;ID_COMPANY_TYPE;STR_EMAIL;BOL_IS_ACTIVE;ID_USER_CREATED;DATE_CREATED;ID_USER_UPDATED;DATE_LAST_UPDATED
+01000;Base Network;0;basenetwork@abcus.com;Y;0;sysdate;;
+01001;Partner Network 1;1;partnernetwork@abacus.com;Y;0;sysdate;;
+01002;Third Party;2;thirdparty@abacus;Y;0;sysdate;;

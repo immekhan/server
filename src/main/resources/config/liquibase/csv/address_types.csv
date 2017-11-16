@@ -1,0 +1,8 @@
+ID_ADDRESS_TYPE;STR_ADDRESS_TYPE;ID_USER_CREATED;DATE_CREATED;ID_USER_UPDATED;DATE_LAST_UPDATED
+0;Postal and delivery;0;sysdate;;
+1;Delivery only;0;sysdate;;
+2;Outlet address;0;sysdate;;
+3;Third Party Address;0;sysdate;;
+4;SP Technical Contact;0;sysdate;;
+5;SP Operations Contact;0;sysdate;;
+10;Point of interest;0;sysdate;;

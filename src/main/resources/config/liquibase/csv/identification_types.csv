@@ -1,0 +1,12 @@
+ID_IDENTIFICATION_TYPE;STR_IDENTIFICATION;ID_USER_CREATED;DATE_CREATED;ID_USER_UPDATED;DATE_LAST_UPDATED
+0;By mobile-no;0;sysdate;;
+1;By customer-id;0;sysdate;;
+2;By IMEI from mobile;0;sysdate;;
+3;By IMEI:co-user;0;sysdate;;
+4;Foreign customer ID;0;sysdate;;
+5;By user-name;0;sysdate;;
+6;By card number;0;sysdate;;
+7;By email;0;sysdate;;
+8;By SVA;0;sysdate;;
+12;By facebook id;0;sysdate;;
+13;By github id;0;sysdate;;
